@@ -15,7 +15,7 @@
               println 'Pulling project'
               git branch: 'master', url: 'https://github.com/kvelarde/swarm-nodes.git'
             stage 'Packer Terraform Pipeline'
-              sh 'docker run -v /keys:/keys -dti --rm swarm-nodes:0.1'
+              sh 'docker run -v /keys:/keys -ti --rm swarm-nodes:0.1'
 
           } // end node
           } // end try
