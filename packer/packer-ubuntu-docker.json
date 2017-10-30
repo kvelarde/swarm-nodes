@@ -1,0 +1,46 @@
+{
+  "variables": {
+    "aws_region"       :  "us-west-2",
+    "aws_instance_type":  "t2.xlarge",
+    "name":               "aws-ubuntu-base",
+    "dns_listen_addr":    "127.0.0.1",
+    "packer_builder_security_group": "{{user `packer_builder_security_group`}}",
+    "subnet_id": "{{user `subnet_id`}}",
+    "ssh_username":       "ubuntu"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "region": "{{user `aws_region`}}",
+    "associate_public_ip_address": "true",
+    "security_group_ids": "{{ user `packer_builder_security_group` }}",
+    "ssh_pty": "true",
+    "subnet_id":"{{ user `subnet_id` }}",
+    "source_ami_filter": {
+      "filters": {
+        "virtualization-type": "hvm",
+        "name": "*ubuntu-xenial-16.04-amd64-server-*",
+        "root-device-type": "ebs"
+      },
+      "owners": ["099720109477"],
+      "most_recent": true
+    },
+    "instance_type": "{{user `aws_instance_type`}}",
+    "ssh_username": "ubuntu",
+    "ami_name": "devops21",
+    "force_deregister": true
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 15",
+      "sudo apt-get clean",
+      "sudo apt-get update",
+      "sudo apt-get install -y apt-transport-https ca-certificates nfs-common",
+      "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -",
+      "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\"",
+      "sudo apt-get update",
+      "sudo apt-get install -y docker-ce",
+      "sudo usermod -aG docker ubuntu"
+    ]
+  }]
+}

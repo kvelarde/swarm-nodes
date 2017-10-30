@@ -1,0 +1,118 @@
+[0m[1maws_instance.swarm-manager: Refreshing state... (ID: i-0e09f5f53886c3346)[0m
+[0m[1maws_instance.swarm-worker[0]: Creating...[0m
+  ami:                              "" => "ami-ca8e46b2"
+  associate_public_ip_address:      "" => "true"
+  availability_zone:                "" => "<computed>"
+  ebs_block_device.#:               "" => "<computed>"
+  ephemeral_block_device.#:         "" => "<computed>"
+  instance_state:                   "" => "<computed>"
+  instance_type:                    "" => "m4.2xlarge"
+  ipv6_address_count:               "" => "<computed>"
+  ipv6_addresses.#:                 "" => "<computed>"
+  key_name:                         "" => "kurtis-fox"
+  network_interface.#:              "" => "<computed>"
+  network_interface_id:             "" => "<computed>"
+  placement_group:                  "" => "<computed>"
+  primary_network_interface_id:     "" => "<computed>"
+  private_dns:                      "" => "<computed>"
+  private_ip:                       "" => "<computed>"
+  public_dns:                       "" => "<computed>"
+  public_ip:                        "" => "<computed>"
+  root_block_device.#:              "" => "<computed>"
+  security_groups.#:                "" => "<computed>"
+  source_dest_check:                "" => "true"
+  subnet_id:                        "" => "subnet-2a158b71"
+  tags.%:                           "" => "6"
+  tags.App:                         "" => "docker"
+  tags.Env:                         "" => "sandbox"
+  tags.Name:                        "" => "swarm-worker0"
+  tags.Owner:                       "" => "kurtis"
+  tags.Project:                     "" => "serenity"
+  tags.Role:                        "" => "swarm-worker"
+  tenancy:                          "" => "<computed>"
+  volume_tags.%:                    "" => "<computed>"
+  vpc_security_group_ids.#:         "" => "1"
+  vpc_security_group_ids.685683626: "" => "sg-46af403c"[0m
+[0m[1maws_instance.swarm-worker[1]: Creating...[0m
+  ami:                              "" => "ami-ca8e46b2"
+  associate_public_ip_address:      "" => "true"
+  availability_zone:                "" => "<computed>"
+  ebs_block_device.#:               "" => "<computed>"
+  ephemeral_block_device.#:         "" => "<computed>"
+  instance_state:                   "" => "<computed>"
+  instance_type:                    "" => "m4.2xlarge"
+  ipv6_address_count:               "" => "<computed>"
+  ipv6_addresses.#:                 "" => "<computed>"
+  key_name:                         "" => "kurtis-fox"
+  network_interface.#:              "" => "<computed>"
+  network_interface_id:             "" => "<computed>"
+  placement_group:                  "" => "<computed>"
+  primary_network_interface_id:     "" => "<computed>"
+  private_dns:                      "" => "<computed>"
+  private_ip:                       "" => "<computed>"
+  public_dns:                       "" => "<computed>"
+  public_ip:                        "" => "<computed>"
+  root_block_device.#:              "" => "<computed>"
+  security_groups.#:                "" => "<computed>"
+  source_dest_check:                "" => "true"
+  subnet_id:                        "" => "subnet-2a158b71"
+  tags.%:                           "" => "6"
+  tags.App:                         "" => "docker"
+  tags.Env:                         "" => "sandbox"
+  tags.Name:                        "" => "swarm-worker0"
+  tags.Owner:                       "" => "kurtis"
+  tags.Project:                     "" => "serenity"
+  tags.Role:                        "" => "swarm-worker"
+  tenancy:                          "" => "<computed>"
+  volume_tags.%:                    "" => "<computed>"
+  vpc_security_group_ids.#:         "" => "1"
+  vpc_security_group_ids.685683626: "" => "sg-46af403c"[0m
+[0m[1maws_instance.swarm-worker.0: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_instance.swarm-worker.1: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_instance.swarm-worker[1]: Provisioning with 'remote-exec'...[0m[0m
+[0m[0maws_instance.swarm-worker[1] (remote-exec): Connecting to remote host via SSH...
+aws_instance.swarm-worker[1] (remote-exec):   Host: 52.36.220.46
+aws_instance.swarm-worker[1] (remote-exec):   User: ubuntu
+aws_instance.swarm-worker[1] (remote-exec):   Password: false
+aws_instance.swarm-worker[1] (remote-exec):   Private key: true
+aws_instance.swarm-worker[1] (remote-exec):   SSH Agent: true
+[0m[1maws_instance.swarm-worker[0]: Provisioning with 'remote-exec'...[0m[0m
+[0m[0maws_instance.swarm-worker[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.swarm-worker[0] (remote-exec):   Host: 50.112.192.182
+aws_instance.swarm-worker[0] (remote-exec):   User: ubuntu
+aws_instance.swarm-worker[0] (remote-exec):   Password: false
+aws_instance.swarm-worker[0] (remote-exec):   Private key: true
+aws_instance.swarm-worker[0] (remote-exec):   SSH Agent: true
+[0m[1maws_instance.swarm-worker.0: Still creating... (20s elapsed)[0m[0m
+[0m[1maws_instance.swarm-worker.1: Still creating... (20s elapsed)[0m[0m
+[0m[0maws_instance.swarm-worker[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.swarm-worker[0] (remote-exec):   Host: 50.112.192.182
+aws_instance.swarm-worker[0] (remote-exec):   User: ubuntu
+aws_instance.swarm-worker[0] (remote-exec):   Password: false
+aws_instance.swarm-worker[0] (remote-exec):   Private key: true
+aws_instance.swarm-worker[0] (remote-exec):   SSH Agent: true
+[0m[0maws_instance.swarm-worker[0] (remote-exec): Connecting to remote host via SSH...
+aws_instance.swarm-worker[0] (remote-exec):   Host: 50.112.192.182
+aws_instance.swarm-worker[0] (remote-exec):   User: ubuntu
+aws_instance.swarm-worker[0] (remote-exec):   Password: false
+aws_instance.swarm-worker[0] (remote-exec):   Private key: true
+aws_instance.swarm-worker[0] (remote-exec):   SSH Agent: true
+[0m[0maws_instance.swarm-worker[0] (remote-exec): Connected!
+[0m[0maws_instance.swarm-worker[0] (remote-exec): This node joined a swarm as a worker.
+[0m[1maws_instance.swarm-worker[0]: Creation complete after 26s (ID: i-0da207c84bba3bd73)[0m[0m
+[0m[0maws_instance.swarm-worker[1] (remote-exec): Connecting to remote host via SSH...
+aws_instance.swarm-worker[1] (remote-exec):   Host: 52.36.220.46
+aws_instance.swarm-worker[1] (remote-exec):   User: ubuntu
+aws_instance.swarm-worker[1] (remote-exec):   Password: false
+aws_instance.swarm-worker[1] (remote-exec):   Private key: true
+aws_instance.swarm-worker[1] (remote-exec):   SSH Agent: true
+[0m[0maws_instance.swarm-worker[1] (remote-exec): Connected!
+[0m[0maws_instance.swarm-worker[1] (remote-exec): This node joined a swarm as a worker.
+[0m[1maws_instance.swarm-worker[1]: Creation complete after 29s (ID: i-0ae8b21c1236bbd1e)[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+swarm_manager_1_private_ip = 172.16.19.162
+swarm_manager_1_public_ip = 34.209.7.101[0m
