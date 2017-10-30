@@ -1,0 +1,28 @@
+---
+- job:
+    name: docker_swarm_full_deploy
+    project-type: pipeline
+    description: 'Docker Swarm: Full DEPLOY JOB'
+    disabled: false
+    display-name: 'Deployment: Docker Swarm FULL DEPLOY Job'
+    logrotate:
+      daysToKeep: 10
+      numToKeep: 50
+    dsl: |
+          try {
+          node {
+            stage 'Pull Code'
+              println 'Pulling project'
+              git branch: 'master', url: 'https://github.com/kvelarde/swarm-nodes.git'
+            stage 'Packer Terraform Pipeline'
+              sh 'docker run -v /keys:/keys -dti --rm swarm-nodes:0.1'
+
+          } // end node
+          } // end try
+          catch (exc) {
+            String recipient = 'infra@lists.kurtisvelarde.com'
+            mail subject: "${env.JOB_NAME} (${env.BUILD_NUMBER}) failed",
+              body: "It appears that ${env.BUILD_URL} is failing",
+              to: recipient,
+              from: 'build@kurtisvelarde.com'
+          }
