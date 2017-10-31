@@ -4,7 +4,7 @@
     project-type: pipeline
     description: 'Docker Swarm: DEPLOY JOB'
     disabled: false
-    display-name: 'Deployment: Docker Swarm DEPLOY Job'
+    display-name: 'Docker Swarm: DEPLOY Job'
     logrotate:
       daysToKeep: 10
       numToKeep: 50

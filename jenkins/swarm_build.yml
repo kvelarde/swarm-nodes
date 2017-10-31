@@ -4,7 +4,7 @@
     project-type: pipeline
     description: 'Docker Swarm: Build JOB'
     disabled: false
-    display-name: 'Deployment: Docker Swarm Build Job'
+    display-name: 'Docker Swarm: Build Job'
     logrotate:
       daysToKeep: 10
       numToKeep: 50
@@ -15,7 +15,7 @@
               println 'Pulling project'
               git branch: 'master', url: 'https://github.com/kvelarde/swarm-nodes.git'
             stage 'Packer Terraform Pipeline'
-              sh 'docker run -v /keys:/keys -ti --rm  swarm-nodes-build:0.1'
+              sh 'docker run -v /keys:/keys -i --rm  swarm-nodes-build:0.1'
 
           } // end node
           } // end try
