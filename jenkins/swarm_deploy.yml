@@ -2,9 +2,9 @@
 - job:
     name: docker_swarm_full_deploy
     project-type: pipeline
-    description: 'Docker Swarm: Full DEPLOY JOB'
+    description: 'Docker Swarm: DEPLOY JOB'
     disabled: false
-    display-name: 'Deployment: Docker Swarm FULL DEPLOY Job'
+    display-name: 'Deployment: Docker Swarm DEPLOY Job'
     logrotate:
       daysToKeep: 10
       numToKeep: 50
@@ -15,7 +15,7 @@
               println 'Pulling project'
               git branch: 'master', url: 'https://github.com/kvelarde/swarm-nodes.git'
             stage 'Packer Terraform Pipeline'
-              sh 'docker run -v /keys:/keys -i --rm swarm-nodes:0.1'
+              sh 'docker run -v /keys:/keys -i --rm swarm-nodes-apply:0.1'
 
           } // end node
           } // end try
