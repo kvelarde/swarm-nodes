@@ -28,4 +28,4 @@ COPY boot.sh /boot.sh
 
 ENTRYPOINT ["/boot.sh"]
 
-CMD ["destory"]
+CMD ["destroy"]
