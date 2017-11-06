@@ -27,5 +27,3 @@ COPY packer/ /packer
 COPY boot.sh /boot.sh
 
 ENTRYPOINT ["/boot.sh"]
-
-CMD ["destroy"]
